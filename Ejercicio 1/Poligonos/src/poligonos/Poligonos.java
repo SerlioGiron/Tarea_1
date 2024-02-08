@@ -61,6 +61,43 @@ public class Poligonos {
             pointsy.add(y);
 
         }
+        
+        //Perimetros
+        ArrayList<Double> distanciaPerimetros = new ArrayList<>();
+        for (int i = 0; i < pointsx.size(); i++) {
+            double xUno, xDos, yUno, yDos, xCoordinate, yCoordinate, xSquared, ySquared, insideSum, squareRoot;
+            xUno = pointsx.get(i);
+            yUno = pointsy.get(i);
+            if (i == pointsx.size()-1) {
+                xDos = pointsx.get(0);
+                yDos = pointsy.get(0);
+            } else {
+                xDos = pointsx.get(i+1);
+                yDos = pointsy.get(i+1);
+            }
+            System.out.println("Coordenadas " + i + ": (" + (xUno-200) + ", " + (yUno-200) + ") and (" + (xDos-200) + ", " + (yDos-200) + ")");
+            
+            xCoordinate = xDos - xUno;
+            yCoordinate = yDos - yUno;
+            
+            xSquared = xCoordinate * xCoordinate;
+            ySquared = yCoordinate * yCoordinate;
+            
+            insideSum = xSquared + ySquared;
+            
+            squareRoot = Math.sqrt(insideSum);
+            distanciaPerimetros.add(squareRoot);
+            System.out.println("Distancia " + i + ": " + squareRoot);
+        }
+        
+        double sumPerimetros = 0;
+        for (int i = 0; i < distanciaPerimetros.size(); i++) {
+            sumPerimetros += distanciaPerimetros.get(i);
+        }
+        double avgPerimetros = 0;
+        avgPerimetros = sumPerimetros / distanciaPerimetros.size();
+        
+        System.out.println("El Promedio de los Perimetros Es: " + avgPerimetros);
 
 //        for (int i = 0; i < pointsx.size() - 1; i++) {
 //            System.out.println( "x -> " + pointsx.get(i));
