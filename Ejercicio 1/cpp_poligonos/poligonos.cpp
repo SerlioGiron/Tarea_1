@@ -14,7 +14,6 @@ int main()
     //  cout << "Random double between 0.0 and 1.0: " << random_number << std::endl;
 
     int radius = 200;
-    cout << "radius: " << radius << endl;
 
     double puntos = 45;
     double angulo = 360 / puntos;
@@ -29,17 +28,10 @@ int main()
         angulos.push_back(cont);
     }
 
-    for (size_t i = 0; i < angulos.size(); i++)
-    {
-        cout << angulos.at(i) << " " << endl;
-    }
-
     vector<int> pointsx;
     vector<int> pointsy;
     for (double angle : angulos)
     {
-        cout << "angulo: " << angle << endl;
-
         mt19937 rng(std::random_device{}());
         uniform_real_distribution<double> dist(0.0, 1.0);
         double random_number = dist(rng);
@@ -47,10 +39,8 @@ int main()
         double randonNumber_alterar = 0.01 + random_number * 0.99;
 
         double angle_radians = angle * M_PI / 180.0;
-        int x = static_cast<int>(randonNumber_alterar * radius * cos(angle * M_PI / 180.0));
-        int y = static_cast<int>(randonNumber_alterar * radius * sin(angle * M_PI / 180.0));
-        cout << "x -> " + x << endl;
-        cout << "y -> " + y << endl;
+        int x = (randonNumber_alterar * radius * cos(angle * M_PI / 180.0));
+        int y = (randonNumber_alterar * radius * sin(angle * M_PI / 180.0));
         x += 200;
         y += 200;
         pointsx.push_back(x);
@@ -84,7 +74,7 @@ int main()
 
         squareRoot = sqrt(insideSum);
         distanciaPerimetros.push_back(squareRoot);
-        cout << "Distancia " << i << ": " << squareRoot << endl;
+        cout << "Distancia " << i << ": " << squareRoot << "\n" << endl;
     }
 
     double sumPerimetros = 0;
