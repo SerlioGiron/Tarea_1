@@ -17,6 +17,10 @@ public class Poligonos {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        
+//        System.out.println("args[0]" + args[0]);
+//        System.out.println("args[1]" + args[1]);
+//        System.out.println("args[2]" + args[2]);
         // Create a Random object
         Random random = new Random();
 
@@ -103,7 +107,7 @@ public class Poligonos {
 //            System.out.println( "x -> " + pointsx.get(i));
 //            System.out.println( "y -> " + pointsy.get(i));
 //        }
-        new jRisk(pointsx, pointsy);
+//        new jRisk(pointsx, pointsy);
 
     }
 
