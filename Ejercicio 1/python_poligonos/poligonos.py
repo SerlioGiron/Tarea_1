@@ -4,7 +4,7 @@ import math
 random.seed()
 
 radius = 200
-puntos = 6
+puntos = 7
 angulo = 360 / puntos
 
 cont = 0
@@ -44,7 +44,7 @@ for i in range(len(pointsx)):
         xDos = pointsx[i + 1]
         yDos = pointsy[i + 1]
     
-    print("Coordenadas {}: ({}, {}) and ({}, {})".format(i, xUno - 200, yUno - 200, xDos - 200, yDos - 200))
+    print("Coordenadas {}: ({}, {}) and ({}, {})".format(i, xUno, yUno, xDos, yDos))
     
     xCoordinate = xDos - xUno
     yCoordinate = yDos - yUno
