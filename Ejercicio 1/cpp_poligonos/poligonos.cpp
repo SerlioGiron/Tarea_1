@@ -19,7 +19,8 @@ int main(int argc, char *argv[])
 
     time_t inicioEjecucion = time(nullptr); //Inicio de Ejecucion
 
-    int radius = 200; //Variables para Generar los Angulos
+    double random_radius = randomNextDouble();
+    // int radius = 200; //Variables para Generar los Angulos
     double puntos = std::stoi(argv[2]);
     double angulo = 360 / puntos;
     double cont = 0; 
@@ -45,8 +46,8 @@ int main(int argc, char *argv[])
         long inicioGeneracionPoligonos = time(nullptr);
         for (double angle : angulos) {
             double random_number = randomNextDouble();
-            int x = (random_number * radius * cos(angle * M_PI / 180.0));
-            int y = (random_number * radius * sin(angle * M_PI / 180.0));
+            int x = (random_number * random_radius * cos(angle * M_PI / 180.0));
+            int y = (random_number * random_radius * sin(angle * M_PI / 180.0));
             x += 200;
             y += 200;
             pointsx.push_back(x);
