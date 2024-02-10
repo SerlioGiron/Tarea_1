@@ -10,8 +10,21 @@ using namespace std;
 double randomNextDouble()
 {
     mt19937 rng(std::random_device{}());
-    uniform_real_distribution<double> dist(1, 1000);
+    uniform_real_distribution<double> dist(0.0, 1.0);
     return dist(rng);
+}
+
+int randomNextInt()
+{
+    random_device rd;
+    mt19937 gen(rd());
+    
+    // Define the distribution
+    uniform_int_distribution<> dis(1, 1000);
+    
+    // Generate a random number
+    int random_num = dis(gen);
+    return random_num;
 }
 
 int main(int argc, char *argv[])
@@ -19,7 +32,7 @@ int main(int argc, char *argv[])
 
     time_t inicioEjecucion = time(nullptr); //Inicio de Ejecucion
 
-    double random_radius = randomNextDouble();
+    double random_radius = randomNextInt();
     // int radius = 200; //Variables para Generar los Angulos
     double puntos = std::stoi(argv[2]);
     double angulo = 360 / puntos;
