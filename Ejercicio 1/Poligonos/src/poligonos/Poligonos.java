@@ -85,7 +85,6 @@ public class Poligonos {
         System.out.println("Suma Total: " + sumPerimetros);
         System.out.println("El Promedio de los Perimetros Es: " + avgPerimetros + '\n');
 
-
         long finEjecucion = System.currentTimeMillis();
         long totalEjecucion = (finEjecucion - inicioEjecucion);
 
