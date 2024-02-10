@@ -10,7 +10,7 @@ using namespace std;
 double randomNextDouble()
 {
     mt19937 rng(std::random_device{}());
-    uniform_real_distribution<double> dist(0.0, 1.0);
+    uniform_real_distribution<double> dist(1, 1000);
     return dist(rng);
 }
 
