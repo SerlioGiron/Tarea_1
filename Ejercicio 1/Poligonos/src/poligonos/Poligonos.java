@@ -7,12 +7,13 @@ public class Poligonos {
 
     public static void main(String[] args) {
 
-        Random random = new Random();
+        long inicioEjecucion = System.currentTimeMillis(); //Inicio de Ejecucion
+
+        Random random = new Random(); //Variables para Generar los Angulos
         int radius = 200;
         double puntos = 10;
         double angulo = 360 / Integer.parseInt(args[1]);
         double cont = 0;
-
         ArrayList<Double> angulos = new ArrayList<>();
 
         angulos.add(cont);
@@ -23,9 +24,16 @@ public class Poligonos {
 
         ArrayList<Double> distanciaPerimetros = new ArrayList<>();
 
+        //Generacion de Poligonos y Calculo de Perimetros
+        long totalGeneracionPoligonos = 0;
+        long totalCalculoPerimetros = 0;
+
         for (int i = 0; i < Integer.parseInt(args[0]); i++) {
             ArrayList<Integer> pointsx = new ArrayList<>();
             ArrayList<Integer> pointsy = new ArrayList<>();
+
+             //Generacion de Poligonos
+            long inicioGeneracionPoligonos = System.currentTimeMillis();
             for (double angle : angulos) {
                 double randomNumber_alterar = 0.01 + random.nextDouble() * 0.99;
                 int x = (int) (randomNumber_alterar * radius * Math.cos(Math.toRadians(angle)));
@@ -35,7 +43,11 @@ public class Poligonos {
                 pointsx.add(x);
                 pointsy.add(y);
             }
+            long finGeneracionPoligonos = System.currentTimeMillis();
+            totalGeneracionPoligonos += (finGeneracionPoligonos - inicioGeneracionPoligonos);
 
+            //Calculo de Perimetros
+            long inicioCalculoPerimetros = System.currentTimeMillis();
             for (int j = 0; j < pointsx.size(); j++) {
                 double xUno, xDos, yUno, yDos, xCoordinate, yCoordinate, xSquared, ySquared, insideSum, squareRoot;
                 xUno = pointsx.get(j);
@@ -58,6 +70,9 @@ public class Poligonos {
                 distanciaPerimetros.add(squareRoot);
                 System.out.println("Distancia " + j + ": " + squareRoot);
             }
+            long finCalculoPerimetros = System.currentTimeMillis();
+            totalCalculoPerimetros += (finCalculoPerimetros - inicioCalculoPerimetros);
+
             System.out.println("Fin del Poligono " + (i+1) + '\n');
         }
 
@@ -69,5 +84,13 @@ public class Poligonos {
         avgPerimetros = sumPerimetros / distanciaPerimetros.size();
         System.out.println("Suma Total: " + sumPerimetros);
         System.out.println("El Promedio de los Perimetros Es: " + avgPerimetros + '\n');
+
+
+        long finEjecucion = System.currentTimeMillis();
+        long totalEjecucion = (finEjecucion - inicioEjecucion);
+
+        System.out.println("Tiempo de Generacion de Poligonos: " + (totalGeneracionPoligonos) + " milisegundos");
+        System.out.println("Tiempo de Calculo de Todos los Perimetros: " + (totalCalculoPerimetros) + " milisegundos");
+        System.out.println("Tiempo Total de Ejecucion: " + totalEjecucion + " milisegundos");
     }
 }
