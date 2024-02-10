@@ -53,7 +53,7 @@ for j in range(veces):
             xDos = pointsx[i + 1]
             yDos = pointsy[i + 1]
 
-        print("Coordenadas {}: ({}, {}) and ({}, {})".format(i, xUno, yUno, xDos, yDos))        
+        #print("Coordenadas {}: ({}, {}) and ({}, {})".format(i, xUno, yUno, xDos, yDos))        
         xCoordinate = xDos - xUno
         yCoordinate = yDos - yUno
         xSquared = xCoordinate * xCoordinate
@@ -61,10 +61,10 @@ for j in range(veces):
         insideSum = xSquared + ySquared
         squareRoot = math.sqrt(insideSum)
         distanciaPerimetros.append(squareRoot)
-        print("Distancia {}: {}".format(i, squareRoot))
+        #print("Distancia {}: {}".format(i, squareRoot))
     finCalculoPerimetros = time.time()
     totalCalculoPerimetros += (finCalculoPerimetros - inicioCalculoPerimetros)
-    print("Fin del Poligono ", j+1, "\n")
+    ##print("Fin del Poligono ", j+1, "\n")
 
 sumPerimetros = sum(distanciaPerimetros)
 avgPerimetros = sumPerimetros / len(distanciaPerimetros)

@@ -68,7 +68,7 @@ int main(int argc, char *argv[])
                 xDos = pointsx.at(i + 1);
                 yDos = pointsy.at(i + 1);
             }
-            std::cout << "Coordenadas " << i << ": (" << (xUno - 200) << ", " << (yUno - 200) << ") and (" << (xDos - 200) << ", " << (yDos - 200) << ")" << endl;
+            //std::cout << "Coordenadas " << i << ": (" << (xUno - 200) << ", " << (yUno - 200) << ") and (" << (xDos - 200) << ", " << (yDos - 200) << ")" << endl;
             xCoordinate = xDos - xUno;
             yCoordinate = yDos - yUno;
             xSquared = xCoordinate * xCoordinate;
@@ -77,12 +77,12 @@ int main(int argc, char *argv[])
             squareRoot = sqrt(insideSum);
 
             distanciaPerimetros.push_back(squareRoot);
-            std::cout << "Distancia " << i << ": " << squareRoot << endl;
+            //std::cout << "Distancia " << i << ": " << squareRoot << endl;
         }
         long finCalculoPerimetros = time(nullptr);
         totalCalculoPerimetros += (difftime(finCalculoPerimetros, inicioCalculoPerimetros) * 1000.0);
 
-        std::cout << "Fin del Poligono " << mPoligonos + 1 << "\n" << endl;
+        //std::cout << "Fin del Poligono " << mPoligonos + 1 << "\n" << endl;
     }
 
     double sumPerimetros = 0;
@@ -91,7 +91,7 @@ int main(int argc, char *argv[])
     }
     double avgPerimetros = 0;
     avgPerimetros = sumPerimetros / distanciaPerimetros.size();
-    std::cout << "Suma Total: " << sumPerimetros << endl;
+    //std::cout << "Suma Total: " << sumPerimetros << endl;
     std::cout << "El Promedio de los Perimetros Es: " << avgPerimetros << '\n' << endl;
 
     long finEjecucion = time(nullptr);
