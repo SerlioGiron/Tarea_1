@@ -40,14 +40,14 @@ public class Ejercicio3_Lenguajes {
     public static void imprimirMatriz(double[][] matriz, String mensaje) {
         double tempPromedio = tempPromedio(matriz), desviaciones = 0.0;
 
-        System.out.println("\n" + mensaje);
+        System.out.print("\n" + mensaje);
         for (int i = 0; i < matriz.length; i++) {
             for (int j = 0; j < matriz.length; j++) {
-                System.out.print("[" + matriz[i][j] + "]\t");
+                // System.out.print("[" + matriz[i][j] + "]\t");
                 // Calcular y acumular las desviaciones
                 desviaciones += Math.pow(matriz[i][j] - tempPromedio, 2);
             }
-            System.out.println("");
+            // System.out.println("");
         }
 
         long startTime = System.currentTimeMillis();

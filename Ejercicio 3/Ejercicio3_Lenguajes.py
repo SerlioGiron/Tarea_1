@@ -1,6 +1,9 @@
 import sys
 import random
 import time
+import sys
+
+sys.setrecursionlimit(6000)
 
 # Definir variable global para tiempo de inicio de actualización
 actualizacion_tiempo_inicio = 0
@@ -34,8 +37,8 @@ def imprimir_matriz(matriz, mensaje):
     temp_promedio, desviaciones = calcular_promedios_desviaciones(matriz)
 
     print(f"\n{mensaje}")
-    for row in matriz:
-        print(" ".join(f"[{temp:.1f}]" for temp in row))
+    # for row in matriz:
+    #     print(" ".join(f"[{temp:.1f}]" for temp in row))
 
     # Desviación estándar: Suma de las desviaciones entre la cantidad de elementos
     desv_estandar = desviaciones / (len(matriz) ** 2)
