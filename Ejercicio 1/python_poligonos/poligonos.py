@@ -12,6 +12,9 @@ angulo = 360 / puntos
 cont = 0
 angulos = []
 
+numero = 10
+numero = 4.3
+
 angulos.append(cont)
 for i in range(int(puntos)):
     cont += angulo
